@@ -234,3 +234,7 @@ td .details-control{
 tr .details td .details-control {
     background: url("https://www.datatables.net/examples/resources/details_close.png") no-repeat center center;
 }
+#searchInput {
+    height: 34px;
+    float: left;
+}

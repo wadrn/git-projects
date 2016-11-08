@@ -9,7 +9,7 @@ $(function () {
         }else{
             $.ajax({
                 type: "POST",
-                url: "http://localhost/newServer/newfile.php",
+                url: "http://10.104.9.42:8080/AndroidTv/tv/superlogincheck.do",
                 data: {
                     username: $("#username").val(),
                     password: $("#password").val()
