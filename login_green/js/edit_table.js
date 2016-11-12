@@ -1,7 +1,7 @@
 function showTableData(){
     $('#editable-sample').children('tbody').empty();
     $.ajax({
-        url:"http://localhost/newServer/newfile.php",
+        url:"http://192.168.1.110:8080/AndroidTv/tv/getAllNewsSender.do",
         type:'POST',
         dataType:"json"
     }).done(function(data){
@@ -47,9 +47,8 @@ function newOne(){
             alert("两次密码输入不一致，请重新输入");
         }else{
             $.ajax({
-            url:'http://10.104.9.42:8080/AndroidTv/tv/addManagerSender.do',
+            url:'http://192.168.1.110:8080/AndroidTv/tv/addManagerSender.do',
             type:'POST',
-            dataType:'json',
             data:{
                 username:name,
                 password:password
@@ -67,30 +66,32 @@ function newOne(){
             }
         });       
         }
-        $('input.form-control').val("");
+        // $('input.form-control').val("");
         
     });
 }
 function search(){
-    $searchInput = $("#searchInput").val;
-//    $.ajax({
-//        url:'',
-//        type:'POST',
-//        dataType:"json",
-//        data:{
-//            serchInput:$searchInput
-//        },
-//        success:function(data){
-//            if(data ==="success"){
-//                showTableData();
-//            }else{
-//                alert("查找错误");
-//            }
-//        },
-//        error:function(){
-//            alert("服务器无响应，请重试");
-//        }
-//    });
+    var $searchInput = document.getElementById("searchInput").value;
+    alert($searchInput);
+   $.ajax({
+       url:'',
+       type:'POST',
+       dataType:"json",
+       data:{
+           searchInput:$searchInput
+       },
+       success:function(data){
+           if(data ==="success"){
+               alert("查询成功！");
+               showTableData();
+           }else{
+               alert("查找错误！");
+           }
+       },
+       error:function(){
+           alert("服务器无响应，请重试！");
+       }
+   });
 }
 $(function(){
     showTableData();
