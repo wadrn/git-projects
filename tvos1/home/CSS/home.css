@@ -1,0 +1,300 @@
+body{  margin:0px;
+        padding:0px;
+        font-size: 14px;
+        font-family:"微软雅黑";
+        background-color:#f0f0f0;
+        }
+a{      text-decoration: none;
+        color: #000;
+        }
+ul,li{
+        list-style:none;
+        padding:0;
+        margin:0;
+        }
+input{
+        box-sizing:content-box;
+        -moz-box-sizing:content-box; /* Firefox */
+        -webkit-box-sizing:content-box;
+}
+header{
+        background-color: #fff;
+        border:#ccc 1px solid;
+        height: 50px;
+        clear:both;
+        }
+.logo{ margin:15px  0 0 100px;
+        float:left;
+        font-size: 20px;
+        font-weight: bold;
+        color:#686868;
+        }
+.user{ margin:15px  100px 0 0;
+        float:right;
+        }
+main{
+        margin:35px 100px 85px;
+        background-color: white;
+        border:1px solid #ccc;
+        height:620px;
+        position: relative;
+     }
+
+.left{ width:200px;
+        border:1px solid #ccc;
+        border-right:0;
+        height:620px;
+        position: absolute;
+        top:0;
+        left:0;
+        }
+.left .menuhover{
+        background-color: #e0e0e0;
+}
+.left .menuclick{
+        background-color:#009900;
+        color:#fff;
+}
+.firstlayer>li{
+        border-bottom: solid 0.5px #ccc;
+        padding:0  0 10px 0;
+}
+.firstlayer span{
+        color:#686868;
+        display:block;
+        padding:20px;
+}
+.secondlayer li{
+        text-align: center;
+        width:200px;
+}
+.secondlayer a{
+        display:block;
+        height:30px;
+        line-height:30px;
+}
+.right{border:1px solid #ccc;
+        height:620px;
+        margin:0  0 0 200px;
+        }
+.rightmenu {
+        display:none;
+}
+h3{
+        padding:20px;
+        margin:0;
+        font-weight: normal;
+}
+#material_manage{
+        display:block;
+}
+#user_manage ul{
+        border-bottom: solid 1px #ccc;
+        overflow: hidden;
+}
+#user_manage li{
+        float:left;
+        padding:10px 20px;
+}
+ .lihover{
+        border-bottom:solid #c8c8c8 thick;
+}
+ .liclick{
+        border-bottom:solid green thick;
+}
+#userlist{
+        border:1px solid #ccc;
+        width:740px;
+        height:430px;
+        margin:10px 0 0 20px;
+        display:inline-block;
+        border-collapse: collapse;
+}
+#userlist-th{
+        background-color: #f0f0f0;
+        width:740px;
+        height: 40px;
+        padding-left:10px;
+}
+#add-black{
+        float:right;
+        margin:0 30px 0 0;
+}
+.newuser{
+        width:740px;
+        height: 40px;
+        padding-left:10px;
+        border-bottom: dotted 1px #ccc;
+        border-collapse: collapse;
+}
+#userclass{
+        display:inline-block;
+        width:200px;
+        height:430px;
+        border:1px solid #ccc;
+        margin:0;
+}
+#blacklist{
+        border:1px solid #ccc;
+        width:952px;
+        height:480px;
+        margin:16px 0 0 20px;
+        display:inline-block;
+        border-collapse: collapse;
+}
+#blacktop{
+        background-color: #f0f0f0;
+        width:940px;
+        height: 40px;
+        padding:0 10px;
+}
+#quit-black{
+        float:right;
+        margin:0px 30px 0 0;
+}
+.blackuser{
+        width:950px;
+        height: 40px;
+        padding-left:10px;
+        border-bottom: dotted 1px #ccc;
+        border-collapse: collapse;
+        display:none;
+}
+.tip{
+        display: none;
+        background-color: #f0f0f0;
+        color:#a8a8a8;
+}
+#material_manage ul{
+        border-bottom: solid 1px #ccc;
+        overflow: hidden;
+}
+#material_manage li{
+        float:left;
+        padding:10px 20px;
+}
+.right-bottom{
+        display:none;
+}
+form{
+        margin:15px 20px 5px 20px;
+        padding:2px 2px 2px 5px;
+        border:1px #ccc solid;
+        border-radius: 3px;
+        display: inline-block;
+
+}
+.search-input-text{
+        width:350px;
+        height:20px;
+        line-height:20px;
+        border:0;
+        padding:0;
+        outline: 0;
+        float:left;
+}
+.search-input-button{
+        float: right;
+        height:16px;
+        margin:2px 0;
+        padding:0;
+}
+#new-article{
+        background-color:#090;
+        width:150px;
+        height:30px;
+        line-height:20px;
+        border-radius:3px;
+        border:0;
+        margin:20px 50px;
+        float:right;
+        color:#fff;
+        font-weight:bold;
+        cursor:pointer;
+
+}
+.article-number{
+        margin:3px 20px;
+}
+#noarticle{
+        text-align: center;
+        padding:100px 0;
+        display: none;
+}
+.content{
+        overflow: auto;
+        height:430px;
+}
+.articledemo{
+        width:170px;
+        height:100px;
+        border:solid #e0e0e0 1px;
+        cursor: pointer;
+        display:none;
+        margin:30px 10px;
+        position:relative;
+}
+.delete{
+        position:absolute;
+        right:2px;
+        top:2px;
+        width:20px;
+        height:20px;
+        background:url(../delete.jpg) no-repeat ;
+        background-size:contain ;
+        display: none;
+}
+.articledemo img{
+        width:100%;
+        height:100px;
+        border:none;
+}
+.articledemo p{
+        margin:0;
+        padding:0;
+        text-align: center;
+        background-color: #686868;
+        color:white;
+        width:100%;
+        height:20px;
+}
+.pictable{
+        border:1px solid #ccc;
+        float:left;
+        width:100px;
+        height:100px;
+}
+footer{background-color: #c8c8c8;
+        border:#ccc 1px solid;
+        height: 50px;
+        width: 100%;
+        position: fixed;
+        bottom:0;
+        }
+
+#rightHeader {
+    width: 100%;
+    height: 30px;
+}
+
+#newQuestion {
+    background-color:#090;
+        width:100px;
+        height:30px;
+        line-height:20px;
+        border-radius:3px;
+        border:0;
+        margin-right:10px;
+        float:right;
+        color:#fff;
+        font-weight:bold;
+        cursor:pointer;
+}
+
+#rightContent {
+    position: relative;
+    top: 50px;
+    height:500px;
+}
+
+

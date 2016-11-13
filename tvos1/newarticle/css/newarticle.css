@@ -1,0 +1,351 @@
+body{
+    margin:0px;
+    padding:0px;
+    font-size: 14px;
+    font-family:"微软雅黑";
+    background-color:#e8e8e8;
+}
+a{
+    text-decoration: none;
+    color: #909090;
+}
+ul,li{
+    list-style:none;
+    padding:0;
+    margin:0;
+}
+header{
+    background-color: #fff;
+    border:#ccc 1px solid;
+    height: 50px;
+    clear:both;
+}
+.logo{
+    margin:15px  0 0 100px;
+    float:left;
+    font-size: 20px;
+    font-weight: bold;
+    color:#686868;
+}
+.user{
+    margin:15px  100px 0 0;
+    float:right;
+}
+main{
+    margin:30px 100px;
+    background-color: white;
+    border-bottom:1px solid #ccc;
+    height:620px;
+    position: relative;
+}
+.top{
+    height:50px;
+    border:solid #e0e0e0 1px;
+}
+.icon-goback{
+    background: url(../img/goback.png) no-repeat;
+    display:inline-block;
+    width:26px;
+    height: 26px;
+    position:relative;
+    top:12px;
+    left:10px;
+    margin:0 6px;
+}
+.top span{
+    color:#686868;
+}
+.left{
+    position:absolute;
+    top:51px;
+    left:0;
+    bottom:0;
+    width:200px;
+    /*height:620px;*/
+    background-color: #f8f8f8;
+    border:solid #e0e0e0 1px;
+}
+.twlisttitle{
+    padding:0 15px;
+}
+.firsttitle{
+    width:170px;
+    border:solid #e0e0e0 1px;
+    margin:0 auto;
+    cursor: pointer;
+}
+#firsttitle{
+    width:100%;
+    height:100px;
+    border:none;
+}
+.firsttitle p{
+    margin:0;
+    text-align: center;
+    background-color: #686868;
+    color:white;
+    width:100%;
+    height:20px;
+}
+.middle{
+    margin:0px 0px 0 200px;
+    height:620px;
+    font-size:15px;
+    overflow:auto;
+}
+.toolbarbox{
+    border-bottom: solid #f0f0f0 0.5px;
+    padding:10px 50px;
+}
+
+.btn-group{
+    display:inline-block;
+    padding:5px;
+    margin:5px 0px ;
+    border-right:dotted #ccc 1px;
+}
+
+.btn{
+    display:inline-block;
+    width:15px;
+    height:15px;
+    margin:0 3px;
+    padding:0;
+    color:#686868;
+}
+#icon-undo{
+    background:url(../img/back.jpg) no-repeat ;
+    background-size:contain ;
+}
+#icon-repeat{
+    background:url(../img/forward.jpg) no-repeat ;
+    background-size:contain ;
+}
+
+#icon-align-left{
+    background:url(../img/left.jpg) no-repeat ;
+    background-size:contain ;
+}
+#icon-align-center{
+    background:url(../img/center.jpg) no-repeat ;
+    background-size:contain ;
+}
+#icon-align-right{
+     background:url(../img/right.jpg) no-repeat ;
+     background-size:contain ;
+ }
+#icon-align-justify{
+    background:url(../img/justify.jpg) no-repeat ;
+    background-size:contain ;
+}
+
+#icon-indent-right{
+    background:url(../img/indent-right.jpg) no-repeat ;
+    background-size:contain ;
+    width:20px;
+    height:20px;
+}
+#icon-indent-left{
+    background:url(../img/indent-left.jpg) no-repeat ;
+    background-size:contain ;
+    width:20px;
+    height:20px;
+}
+.input-content{
+   padding:8px 40px;
+    overflow: auto;
+    height:480px;
+}
+.input-content input{
+    display: block;
+    border:none;
+    outline: none;
+    padding:5px;
+    margin:10px 0;
+}
+#input-title{
+    height:1.3rem;
+    font-size:18px;
+}
+.input-word{
+    width:100%;
+    /*height:230px;*/
+    border:dotted 1px #ccc;
+    /*overflow: auto;*/
+    word-break: break-all;
+}
+.input-word:focus{
+    z-index: 100;
+}
+#pic1,#pic2{
+    max-width: 170px;
+    max-height: 100px;
+    margin:3px 0;
+}
+.insertpicture{
+    position:absolute;
+    left:0;
+    top:0;
+    margin:auto;
+    right:0;
+    bottom:0;
+    width:650px;
+    height:550px;
+    border:1px solid #ccc;
+    background:white;
+    display: none;
+}
+.insertpic-top{
+    height:40px;
+    line-height: 40px;
+    padding:0 10px;
+    border-bottom:1px solid #ccc;
+    background-color: #f0f0f0;
+}
+.insertpic-top img{
+    float:right;
+    margin:5px 0 0 0;
+}
+#insertpic-main{
+    padding:10px;
+    position:relative;
+    overflow: hidden;
+}
+.insertpic-choose{
+    border:1px solid #ccc;
+    float:left;
+    width:100px;
+    height:100px;
+}
+.imgopacity
+{
+    filter: alpha(opacity=50);
+    -moz-opacity: 0.5;
+    -khtml-opacity: 0.5;
+    opacity: 0.5;
+}
+#shilitupian{
+    background: url("../img/Chrysanthemum.jpg");
+    background-size: 100% 100%;
+}
+#shilitupian1{
+    background: url("../img/TVOS.png");
+    background-size: 100% 100%;
+}
+.insertpic-footer{
+    background-color: #f8f8f8;
+    border-top:#ccc 1px solid;
+    height: 50px;
+    width: 100%;
+    position:absolute;
+    bottom:0;
+    text-align: center;
+}
+.insertpic-footer button,footer button{
+    display: inline-block;
+    margin:15px 10px;
+    width:85px;
+    height:25px;
+    border-radius:2px;
+    border:1px solid #ccc;
+    background-color: white;
+    cursor:pointer;
+}
+
+#localunloadbutton{
+    margin:15px 10px;
+    width:85px;
+    height:25px;
+    line-height: 25px;
+    border:1px solid #ccc;
+    border-radius: 4px;
+    color: #fff;
+    background: #009900;
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+#localunload{
+    position: absolute;
+    font-size: 10px;
+    right: 0;
+    top: 0;
+    width:85px;
+    height:25px;
+    cursor: pointer;
+    opacity:0;
+    filter:alpha(opacity=0);
+}
+#save{
+    background-color: #009900;
+    color: #fff;
+}
+#localunloadbutton:hover,#save:hover{
+    background-color: #006600;
+}
+#chooseensure:hover,#choosecancel:hover,#preview:hover,#save-send:hover{
+    background-color: #e8e8e8;
+}
+.input-content img,.insertpic-choose,#off{
+    cursor:pointer;
+}
+#yulan{
+    width:700px;
+    height:685px;
+    background:#fff;
+    border:solid 1px #ccc;
+    position:fixed;
+    left:0;
+    top:0;
+    margin:auto;
+    right:0;
+    bottom:10px;
+    display:none;
+    z-index: 1000;
+    overflow: auto;
+}
+#yulan-top{
+    height:35px;
+    border-bottom:1px solid #ccc;
+    background: #f8f8f8;
+}
+#yulan-off{
+    float:right;
+    cursor: pointer;
+}
+#yulan-main{
+    padding:20px 40px;
+}
+#yulan-title{
+    text-align: left;
+    margin:20px;
+    font-size: 20px;
+    font-family:"微软雅黑";
+}
+#yulan-author{
+    border-bottom: dotted 1px #ccc;
+    text-indent: 20px;
+    color:#808080;
+    padding:5px 0px;
+    margin-bottom:15px;
+}
+#yulan-word1,#yulan-word2{
+    border: dashed #f33 1px;
+    border-radius: 4px;
+    margin:5px;
+}
+#yulan-pic1,#yulan-pic2{
+    display:block;
+    margin:0 auto;
+    max-width:300px;
+    max-height:250px;
+}
+footer{
+    background-color: white;
+    border:#ccc 1px solid;
+    height: 60px;
+    width: 100%;
+    position:fixed;
+    bottom:0;
+    text-align: center;
+}

@@ -1,0 +1,210 @@
+body{
+    margin:0px;
+    padding:0px;
+    font-size: 14px;
+    font-family:"微软雅黑";
+    background-color:#e8e8e8;
+}
+a{
+    text-decoration: none;
+    color: #909090;
+}
+ul,li{
+    list-style:none;
+    padding:0;
+    margin:0;
+}
+header{
+    background-color: #fff;
+    border:#ccc 1px solid;
+    height: 50px;
+    clear:both;
+}
+.logo{
+    margin:15px  0 0 100px;
+    float:left;
+    font-size: 20px;
+    font-weight: bold;
+    color:#686868;
+}
+.user{
+    margin:15px  100px 0 0;
+    float:right;
+}
+main{
+    margin:30px 100px;
+    background-color: white;
+    border-bottom:1px solid #ccc;
+    height:620px;
+    position: relative;
+}
+.top{
+    height:50px;
+    border:solid #e0e0e0 1px;
+}
+.icon-goback{
+    background: url(/newarticle/img/goback.png) no-repeat;
+    display:inline-block;
+    width:26px;
+    height: 26px;
+    position:relative;
+    top:12px;
+    left:10px;
+    margin:0 6px;
+}
+.top span{
+    color:#686868;
+}
+#build-icon {
+    background: rgba(255,255,234,0.8);
+    border: 1px solid #EFDB9F;
+    border-bottom: 0 none;
+    position: fixed;
+    bottom: 40px;
+    padding: 10px 0;
+    text-align: center;
+    right: 100px;
+    z-index: 9;
+}
+
+#build-left {
+    background: #ffffea none repeat scroll 0 0;
+    border-right: 1px solid #efdb9f;
+    height: 568px;
+    position: absolute;
+    padding-top: 5px;
+    left: 0;
+    top: 20;
+    width: 320px;
+    z-index: 3;
+}
+
+#question-edit-box {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+#question-edit legend {
+    position: relative;
+    color:#666;
+    text-align: center;
+}
+
+.question-text {
+    border-radius: 3px;
+    height: 100px;
+    width: 280px;
+}
+
+#option-box table {
+    width: 280px;
+    border:1px solid #ccc;
+    background: #fff none repeat scroll 0 0;
+}
+.question-answer .table{
+    background: #fff none repeat scroll 0 0;
+}
+
+#question-edit {
+    position: absolute;
+}
+
+#question-edit-box textarea {
+}
+
+
+
+#option-box .table input.ocode {
+    width: 50px;
+}
+
+fieldset#titlefield {
+    width: 320px;
+    height: 200px;
+}
+
+#option-box table tr {
+    height:20px;
+    line-height: 20px;
+}
+
+fieldset#option-box {
+    height: 310px;
+}
+
+#build-right {
+    border-left: 1px solid #ddd;
+    margin-left: 320px;
+    position: relative;
+}
+
+#question-box {
+    min-height: 570px;
+}
+
+#question-box li.active {
+    background: #eff6ff none repeat scroll 0 0;
+    border: 1px solid #c2d7ef;
+}
+#question-box >li{
+    margin: 10px;
+    padding: 5px;
+    position: relative;
+    z-index: 2;
+}
+
+.question-title {
+    font-size: 14px;
+    padding: 5px;
+}
+
+.question-code {
+    float: left;
+    margin-right: 5px;
+    vertical-align: top;
+}
+
+.question-question {
+    min-height: 20px;
+    overflow: hidden;
+}
+
+.question-answer {
+    overflow-x: auto;
+    padding: 0 20px 5px;
+}
+
+.question-answer .table td {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.question-answer .table th {
+    font-weight: 700;
+}
+
+#survey-build {
+    overflow: scroll;
+}
+
+
+
+#question-wrap {
+    height: 570px;
+    overflow: scroll;
+}
+
+.top .survey-option {
+    width: 300px;
+    height: 100%;
+    float: right;
+    text-align: center;
+}
+
+.survey-option button{
+    position: relative;
+    top: 5px;
+    left: 40px;
+    margin-left: 10px;
+}

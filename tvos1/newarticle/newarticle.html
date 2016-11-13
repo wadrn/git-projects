@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="css/newarticle.css" type="text/css" rel="stylesheet">
+    <script language="JavaScript" type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
+    <script src="js/jquery.form.js"></script>
+    <script src="js/newarticle.js"></script>
+    <title>新建图文消息</title>
+
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="">TVOS社区公众平台
+        </div>
+        <div class="user">
+            <img src="">
+            <a href=""><span id="username"></span></a>
+            <a href="/tvos1/login/login.html"><span>退出</span></a>
+        </div>
+    </header>
+    <main>
+        <div class="top">
+            <a href="/tvos1/home/home.html" class="icon-goback"></a>
+            <a href="/tvos1/home/home.html" class="goback">素材管理</a>
+            &nbsp;&nbsp;<span>/</span>&nbsp;&nbsp;新建图文消息
+        </div>
+        <div class="left">
+            <p class="twlisttitle">图文列表</p>
+            <div class="twlist">
+                <div class="titlelist">
+                    <div class="firsttitle">
+                        <img src=""  id="firsttitle">
+                        <p>标题</p>
+                    </div>
+                </div>
+                <div class="addtitle"></div>
+            </div>
+        </div>
+        <div class="middle">
+            <div id='editControls' class='toolbarbox'>
+                <div class='btn-group'>
+                    <a class='btn' data-role='undo' href='#'id='icon-undo' ></a>
+                    <a class='btn' data-role='redo' href='#'id='icon-repeat'></a>
+                </div>
+                <div class='btn-group'>
+                    <a class='btn' data-role='bold' href='#'><b>B</b></a>
+                    <a class='btn' data-role='italic' href='#'><em>I</em></a>
+                    <a class='btn' data-role='underline' href='#'><u><b >U</b></u></a>
+                    <a class='btn' data-role='strikeThrough' href='#'><strike>abc</strike></a>&nbsp;&nbsp;
+                </div>
+                <div class='btn-group'>
+                    <a class='btn' data-role='justifyLeft' href='#'id='icon-align-left'></a>
+                    <a class='btn' data-role='justifyCenter' href='#'id='icon-align-center'></a>
+                    <a class='btn' data-role='justifyRight' href='#'id='icon-align-right'></a>
+                    <a class='btn' data-role='justifyFull' href='#'id='icon-align-justify'></a>
+                </div>
+                <div class='btn-group'>
+                    <a class='btn' data-role='indent' href='#'id='icon-indent-right'></a>
+                    <a class='btn' data-role='outdent' href='#'id='icon-indent-left'></a>
+                </div>
+            </div>
+
+            <div class="input-content">
+                <form id="submit_form" method="post"  enctype="multipart/form-data" >
+                    <input id="input-title" value=""  placeholder="输入标题" name="title"/>
+                    <hr>
+                    <div class="input-word" id="input-word1" contenteditable="true">输入第一段文字...<br/><br/><br/></div>
+                    <img src="" alt="插入图片" id="pic1">
+                    <div class="input-word" id="input-word2" contenteditable="true">输入第二段文字...<br/><br/><br/></div>
+                    <img src="" alt="插入图片" id="pic2">
+                </form>
+            </div>
+        </div>
+        <!--<div class="right"></div>-->
+        <div class="insertpicture">
+            <div  class="insertpic-top">选择图片<img src="img/off.jpg" id="off"width="20px" height="20px"/></div>
+            <div id="insertpic-main">
+                <div class="insertpic-choose" id="shilitupian"></div>
+                <div class="insertpic-choose" id="shilitupian1"></div>
+            </div>
+            <div class="insertpic-footer">
+                <div id="localunloadbutton"><input id="localunload" type="file" name="teacherPhoto">本地上传</div>
+                <button id="chooseensure">确定</button>
+                <button id="choosecancel">取消</button>
+            </div>
+        </div>
+        <div id="yulan">
+            <div id="yulan-top">预览<img src="img/off.jpg" id="yulan-off" width="20px" height="20px"/></div>
+            <div id="yulan-main">
+                <div id="yulan-title"></div>
+                <div id="yulan-author"></div>
+                <div id="yulan-word1"></div>
+                <img id="yulan-pic1">
+                <div id="yulan-word2"></div>
+                <img id="yulan-pic2">
+            </div>
+            <div id="yulan-footer"></div>
+        </div>
+    </main>
+    <footer>
+        <button id="save">保存</button>
+        <button id="preview">预览</button>
+        <button id="save-send">保存并群发</button>
+    </footer>
+</body>
+</html>
