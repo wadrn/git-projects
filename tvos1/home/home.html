@@ -4,7 +4,9 @@
     <meta charset="UTF-8" http-equiv="X-UA-COMPATIBLE" content="IE=edge">
     <title>tvos社区公众平台</title>
     <link href="CSS/home.css" rel="stylesheet" type="text/css">
-    <script language="JavaScript" type="text/javascript" src="../newarticle/js/jquery-3.1.0.min.js"></script>
+    <link href="../bootstrap.min.css" rel="stylesheet" type="text/css">
+    <script language="JavaScript" type="text/javascript" src="../jquery-3.1.0.min.js"></script>
+    <script type="text/javascript" src="../newQuestion/bootstrap.js"></script>
     <script src="js/home.js"></script>
 </head>
 <body>
@@ -121,15 +123,67 @@
                 </div>
                 <div id="user_analysis" class="rightmenu">
                     <h3>用户分析</h3>
-                    <div id="rightHeader">
-                        <button id="newQuestion">+新建试题</button>
-                        <div id="rightContent">
-                            <div id="questionList"></div>
+                        <div class="list-title clearfix">
+                            <div class="pull-left">
+                                <form action="" method="get">
+                                    标题：
+                                    <input name="title" type="text">
+                                    <button class="btn btn-success" type="submit" >搜索</button>
+                                </form>
+                            </div>
+                            <div class="pull-right">
+                                <button class="btn btn-success" id="newQuestion">+新建问卷</button>
+                            </div>
                         </div>
+                    <div class="list-table">
+                        <table class="table table-hover data-table">
+                            <tbody>
+                            <tr>
+                                <th style="text-align: center">标题</th>
+                                <th style="text-align: center" width="100px">编辑</th>
+                                <th style="text-align: center" width="100px">查看</th>
+                            </tr>
+                            <tr>
+                                <td style="text-align: center"></td>
+                                <td style="text-align: center"></td>
+                                <td style="text-align: center"></td>
+                            </tr>
+                            </tbody>
+                        </table>
                     </div>
+                    <!--<div class="rightHeader">-->
+                        <!--<button id="newQuestion">+新建试题</button>-->
+                        <!--<div id="rightContent">-->
+                            <!--<div class="questionList">-->
+                                <!--<table class="table table-hover data-table"></table>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
                 </div>
             </div>
     </main>
+    <div class="modal fade" id="saveQuestionnaire" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="exampleModalLabel">New Questionnaire</h4>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="questionnaire-name" class="control-label">Questionnaire Name:</label>
+                            <input type="text" class="form-control" id="questionnaire-name">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="saveQues">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <footer>
         <a href=""><span>关于我们</span></a>
     </footer>

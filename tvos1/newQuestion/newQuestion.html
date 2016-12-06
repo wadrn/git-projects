@@ -2,12 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link href="bootstrap.css" type="text/css" rel="stylesheet">
     <link href="newQuestion.css" type="text/css" rel="stylesheet">
-    <script language="JavaScript" type="text/javascript" src="../newarticle/js/jquery-3.1.0.min.js"></script>
-<!--    <script src="js/jquery.form.js" type="text/javascript"></script>-->
-<!--    <script src="js/newarticle.js" type="text/javascript"></script>-->
-    <script src="../SurveyBuild.js" type="text/javascript"></script>
+    <script language="JavaScript" type="text/javascript" src="../jquery-3.1.0.min.js"></script>
+    <script src="bootstrap.js" type="text/javascript"></script>
+    <script src="SurveyBuild.js" type="text/javascript"></script>
     <title>新建试题</title>
 </head>
 <body>
@@ -18,19 +17,18 @@
         <div class="user">
             <img src="">
             <a href=""><span id="username"></span></a>
-            <a href="/tvos1/login/login.html"><span>退出</span></a>
+            <a href="../login/login.html"><span>退出</span></a>
         </div>
     </header>
     <main>
         <div class="top">
-            <a href="/tvos1/home/home.html" class="icon-goback"></a>
-            <a href="/tvos1/home/home.html" class="goback">用户分析</a>
+            <a href="../home/home.html" class="icon-goback"></a>
+            <a href="../home/home.html" class="goback">用户分析</a>
             &nbsp;&nbsp;<span>/</span>&nbsp;&nbsp;新建试题
             <div class="survey-option">
-                <button class="btn btn-primary">预览</button>
-                <button class="btn btn-success">保存</button>
+                <button class="btn btn-primary" id="preview">预览</button>
+                <button class="btn btn-success" id="saveAndSend">保存</button>
             </div>
-            
         </div>
         <div id="survey-build">
             <div id="build-box" class="clearfix">
@@ -38,9 +36,10 @@
                     <div id="question-edit-box">
                             <fieldset id="titlefield">
                             <legend style="padding-bottom:5px">题号
-                                <input id="qcode"  class="input-mini qcode" onkeyup="" value="Q1" onpaste="return false" ondragenter="return false" oncontextmenu="return false;" maxlength="8" type="text"></legend>
+                                <input id="qcode"  class="input-mini qcode" onkeyup="" value="Q1" ondragenter="return false" oncontextmenu="return false;" maxlength="8" type="text"></legend>
                                 <legend>输入题目
-                                <textarea class="question-text" onkeyup="saveQuestion(this)"></textarea></legend></fieldset>
+                                <textarea class="question-text" onkeyup="saveQuestion(this)"></textarea></legend>
+                        </fieldset>
                             <fieldset style="margin-left:10px" id="option-box">
                                 <legend>输入答案
                                 <table class="table table-bordered data-table">
@@ -50,7 +49,7 @@
                                     <tr>
                                         <td><input class="ocode" onpaste="return false" ondragenter="return false" oncontextmenu="return false;" maxlength="5" value="A" type="text"></td><td><input class="option-txt"  onkeyup="saveAnswer(this)" type="text"></td>
                                     </tr>
-                                <tr>
+                                    <tr>
                                     <td><input class="ocode" onpaste="return false" ondragenter="return false" oncontextmenu="return false;" maxlength="5" value="B"  type="text"></td>
                                     <td><input class="option-txt"  onkeyup="saveAnswer(this)" type="text"></td></tr>
                                     <tr>
@@ -60,7 +59,9 @@
                                     <td><input class="option-txt" onkeyup="saveAnswer(this)" type="text"></td></tr>
                                     </tbody></table></legend>
                                 </fieldset>
-                            <fieldset style="text-align:center;margin-top:9px;"><button class="btn btn-success popo-btn" data-placement="top" data-content="" style="width: 80px" onclick="SurveyBuild.questionAdvanced('A1478236269290')" data-original-title="" title="">
+                            <fieldset style="text-align:center;margin-top:9px;">
+                                <input id="correct" type="text" placeholder="请输入正确答案选项" style="height:33px;margin:2px;border-radius:3px">
+                                <button class="btn btn-success popo-btn" data-placement="top" data-content="" style="width: 80px" onclick="saveCorrectAnswer()" data-original-title="" title="">
                                 确定</button></fieldset>
                     </div>
                 </div>
@@ -79,6 +80,7 @@
                                 <td>热爱</td>
                                 <td>一般</td>
                                 <td>不热爱</td>
+                                <td>正确答案</td>
                                 </tr>
                                 <tr>
                                     <th>请选择</th>
@@ -90,12 +92,13 @@
                                     C</td>
                                     <td>
                                     D</td>
+                                    <td class="correctAnswer"></td>
                                 </tr>
                                 </tbody>
                             </table>
                             </div>
                         <div class="question-action"></div></li>
-              <li id="Q2" class="active" onclick="">
+                        <li id="Q2" class="active">
                         <div class="question-title">
                             <b class="question-code">Q2.</b>
                             <div class="question-question">您热爱中国共产党么</div></div>
@@ -107,6 +110,7 @@
                                 <td>热爱</td>
                                 <td>一般</td>
                                 <td>不热爱</td>
+                                <td>正确答案</td>
                                 </tr>
                                 <tr>
                                     <th>请选择</th>
@@ -118,12 +122,13 @@
                                     C</td>
                                     <td>
                                     D</td>
+                                    <td class="correctAnswer"></td>
                                 </tr>
                                 </tbody>
                             </table>
                             </div>
                         <div class="question-action"></div></li>
-                <li id="Q3" class="active" onclick="">
+                        <li id="Q3" class="active">
                         <div class="question-title">
                             <b class="question-code">Q3.</b>
                             <div class="question-question">您热爱中国共产党么</div></div>
@@ -135,6 +140,7 @@
                                 <td>热爱</td>
                                 <td>一般</td>
                                 <td>不热爱</td>
+                                <td>正确答案</td>
                                 </tr>
                                 <tr>
                                     <th>请选择</th>
@@ -146,12 +152,13 @@
                                     C</td>
                                     <td>
                                     D</td>
+                                    <td class="correctAnswer"></td>
                                 </tr>
                                 </tbody>
                             </table>
                             </div>
                         <div class="question-action"></div></li>
-                  <li id="Q4" class="active" onclick="">
+                        <li id="Q4" class="active">
                         <div class="question-title">
                             <b class="question-code">Q4.</b>
                             <div class="question-question">您热爱中国共产党么</div></div>
@@ -163,6 +170,7 @@
                                 <td>热爱</td>
                                 <td>一般</td>
                                 <td>不热爱</td>
+                                <td>正确答案</td>
                                 </tr>
                                 <tr>
                                     <th>请选择</th>
@@ -174,12 +182,13 @@
                                     C</td>
                                     <td>
                                     D</td>
+                                    <td class="correctAnswer"></td>
                                 </tr>
                                 </tbody>
                             </table>
                             </div>
                         <div class="question-action"></div></li>
-                <li id="Q5" class="active" onclick="">
+                        <li id="Q5" class="active">
                         <div class="question-title">
                             <b class="question-code">Q5.</b>
                             <div class="question-question">您热爱中国共产党么</div></div>
@@ -191,6 +200,7 @@
                                 <td>热爱</td>
                                 <td>一般</td>
                                 <td>不热爱</td>
+                                <td>正确答案</td>
                                 </tr>
                                 <tr>
                                     <th>请选择</th>
@@ -202,16 +212,189 @@
                                     C</td>
                                     <td>
                                     D</td>
+                                    <td class="correctAnswer"></td>
                                 </tr>
                                 </tbody>
                             </table>
                             </div>
                         <div class="question-action"></div></li>
+                        <li id="Q6" class="active">
+                            <div class="question-title">
+                                <b class="question-code">Q6.</b>
+                                <div class="question-question">您热爱中国共产党么</div></div>
+                            <div class="question-answer">
+                                <table class="table table-bordered">
+                                    <tbody><tr>
+                                        <td></td>
+                                        <td>非常热爱</td>
+                                        <td>热爱</td>
+                                        <td>一般</td>
+                                        <td>不热爱</td>
+                                        <td>正确答案</td>
+                                    </tr>
+                                    <tr>
+                                        <th>请选择</th>
+                                        <td>
+                                            A</td>
+                                        <td>
+                                            B</td>
+                                        <td>
+                                            C</td>
+                                        <td>
+                                            D</td>
+                                        <td class="correctAnswer"></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="question-action"></div></li>
+                        <li id="Q7" class="active">
+                            <div class="question-title">
+                                <b class="question-code">Q7.</b>
+                                <div class="question-question">您热爱中国共产党么</div></div>
+                            <div class="question-answer">
+                                <table class="table table-bordered">
+                                    <tbody><tr>
+                                        <td></td>
+                                        <td>非常热爱</td>
+                                        <td>热爱</td>
+                                        <td>一般</td>
+                                        <td>不热爱</td>
+                                        <td>正确答案</td>
+                                    </tr>
+                                    <tr>
+                                        <th>请选择</th>
+                                        <td>
+                                            A</td>
+                                        <td>
+                                            B</td>
+                                        <td>
+                                            C</td>
+                                        <td>
+                                            D</td>
+                                        <td class="correctAnswer"></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="question-action"></div></li>
+                        <li id="Q8" class="active">
+                            <div class="question-title">
+                                <b class="question-code">Q8.</b>
+                                <div class="question-question">您热爱中国共产党么</div></div>
+                            <div class="question-answer">
+                                <table class="table table-bordered">
+                                    <tbody><tr>
+                                        <td></td>
+                                        <td>非常热爱</td>
+                                        <td>热爱</td>
+                                        <td>一般</td>
+                                        <td>不热爱</td>
+                                        <td>正确答案</td>
+                                    </tr>
+                                    <tr>
+                                        <th>请选择</th>
+                                        <td>
+                                            A</td>
+                                        <td>
+                                            B</td>
+                                        <td>
+                                            C</td>
+                                        <td>
+                                            D</td>
+                                        <td class="correctAnswer"></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="question-action"></div></li>
+                        <li id="Q9" class="active">
+                            <div class="question-title">
+                                <b class="question-code">Q9.</b>
+                                <div class="question-question">您热爱中国共产党么</div></div>
+                            <div class="question-answer">
+                                <table class="table table-bordered">
+                                    <tbody><tr>
+                                        <td></td>
+                                        <td>非常热爱</td>
+                                        <td>热爱</td>
+                                        <td>一般</td>
+                                        <td>不热爱</td>
+                                        <td>正确答案</td>
+                                    </tr>
+                                    <tr>
+                                        <th>请选择</th>
+                                        <td>
+                                            A</td>
+                                        <td>
+                                            B</td>
+                                        <td>
+                                            C</td>
+                                        <td>
+                                            D</td>
+                                        <td class="correctAnswer"></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="question-action"></div></li>
+                        <li id="Q10" class="active">
+                            <div class="question-title">
+                                <b class="question-code">Q10.</b>
+                                <div class="question-question">您热爱中国共产党么</div></div>
+                            <div class="question-answer">
+                                <table class="table table-bordered">
+                                    <tbody><tr>
+                                        <td></td>
+                                        <td>非常热爱</td>
+                                        <td>热爱</td>
+                                        <td>一般</td>
+                                        <td>不热爱</td>
+                                        <td>正确答案</td>
+                                    </tr>
+                                    <tr>
+                                        <th>请选择</th>
+                                        <td>
+                                            A</td>
+                                        <td>
+                                            B</td>
+                                        <td>
+                                            C</td>
+                                        <td>
+                                            D</td>
+                                        <td class="correctAnswer"></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="question-action"></div></li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
     </main>
+    <div class="modal fade" id="saveQuestionnaire" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="exampleModalLabel">New Questionnaire</h4>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="questionnaire-name" class="control-label">Questionnaire Name:</label>
+                            <input type="text" class="form-control" id="questionnaire-name">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="saveQues">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

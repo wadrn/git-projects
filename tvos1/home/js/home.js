@@ -13,12 +13,14 @@ $(function() {
     twlencal();
     material();
     $("#article").attr("class","liclick");
+
     $("#new-article").click(function () {
-        window.open("/newarticle/newarticle.html","_self");
+        window.open("../newarticle/newarticle.html","_self");
     });
     $('#newQuestion').click(function(){
-        window.open("/newQuestion/newQuestion.html","_self");
+        window.open("../newQuestion/newQuestion.html","_self");
     });
+
     $(".secondlayer a").mouseover(function () {
         $(this).addClass("menuhover");
     });
