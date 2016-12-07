@@ -236,30 +236,31 @@ $(function(){
             Q9 :{questionTitle:$question9,answer:answer9},
             Q10 :{questionTitle:$question10,answer:answer10}
         };
-        questionnaire = JSON.stringify(questionnaire);
+        //questionnaire = JSON.stringify(questionnaire);
         $("#saveQuestionnaire").modal('show');
     });
     $('#saveQuestionnaire').on('click','#saveQues',function(){
         var $questionnaireName = $('#questionnaire-name').val();
+        questionnaire.questionnaireName = $questionnaireName; //新增问卷名称
+        questionnaire =JSON.stringify(questionnaire);
         $("#saveQuestionnaire").modal('hide');
-         window.location.href = "../home/home.html";
-        // $.ajax({
-        //     type: "POST",
-        //     url: "",
-        //     data: {
-        //         questionnaire:questionnaire
-        //     },
-        //     success: function (data) {
-        //        if(data ==='success'){
-        //            alert("保存成功");
-        //            //显示此调查问卷名
-        //        }else{
-        //
-        //        }
-        //     },
-        //     error:function(){
-        //
-        //     }
-        // });
+        $.ajax({
+            type: "POST",
+            url: "",
+            data: {
+                questionnaire:questionnaire
+            },
+            success: function (data) {
+               if(data ==='success'){
+                   alert("保存成功");
+                   window.location.href = "../home/home.html";
+               }else{
+        
+               }
+            },
+            error:function(){
+                alert("Error");
+            }
+        });
     })
 });

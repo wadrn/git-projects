@@ -56,6 +56,7 @@ $(function() {
             case '4':
                 $(".rightmenu").hide();
                 $("#user_analysis").show();
+                showQuestionList();
                 break;
             default:
                 alert("!!");
@@ -225,6 +226,31 @@ function material(){
         }
     });
 }
+//如果成功创建问卷并保存，会显示问卷的列表
+function showQuestionList(){
+    $("#questionnaireList").children('tbody').empty();
+    $.ajax({
+        url:"",     //显示问卷列表的地址。需要数据库中的信息
+        type:"POST",
+        dataType:"json"
+    }).done(function(data){
+        var tbody ="";
+        $.each(data,function(index,el){
+            var tr ="<tr>";
+            tr+="<td>"+el.Questionnairename+"</td>";
+            tr+="<td>"+"<button id='edit' class='btn btn-success btn-sm' type='button'><i class='fa fa-edit'></i></button>"+"</td>";
+            tr+="<td>"+"<button id='eye' class='btn btn-success btn-sm' type='button'><i class='fa fa-eye'></i></button>"+"</td>";
+            tr+="</tr>";
+            tbody+=tr;
+        });
+        $("#questionnaireList").children('tbody').append(tbody);
+    }).fail(function(){
+        alert("Error");
+    });
+}
+
+
+
 function twlencal() {
     var articlelen=$('.articledemo:visible').length;
     $('#articlenumber').html("图文消息（共"+articlelen+"条）");
