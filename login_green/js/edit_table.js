@@ -1,7 +1,9 @@
 function showTableData(){
     $('#editable-sample').children('tbody').empty();
     $.ajax({
-        url:"http://192.168.1.110:8080/AndroidTv/tv/getAllNewsSender.do",
+       // url:"http://192.168.1.110:8080/AndroidTv/tv/getAllNewsSender.do",
+        //url:"http://10.104.9.42:8080/AndroidTv/tv/getAllNewsSender.do",
+        url:"http://localhost/newServer/newfile.php",
         type:'POST',
         dataType:"json"
     }).done(function(data){
@@ -47,7 +49,7 @@ function newOne(){
             alert("两次密码输入不一致，请重新输入");
         }else{
             $.ajax({
-            url:'http://192.168.1.110:8080/AndroidTv/tv/addManagerSender.do',
+            url:'http://10.104.9.42:8080/AndroidTv/tv/addManagerSender.do',
             type:'POST',
             data:{
                 username:name,
@@ -66,27 +68,32 @@ function newOne(){
             }
         });       
         }
-        // $('input.form-control').val("");
-        
     });
 }
 function search(){
     var $searchInput = document.getElementById("searchInput").value;
-    alert($searchInput);
+    $('#editable-sample').children('tbody').empty();
    $.ajax({
-       url:'',
+       url:'http://10.104.9.42:8080/AndroidTv/tv/search.do',
        type:'POST',
        dataType:"json",
        data:{
-           searchInput:$searchInput
+           keywords:$searchInput
        },
        success:function(data){
-           if(data ==="success"){
-               alert("查询成功！");
-               showTableData();
-           }else{
-               alert("查找错误！");
-           }
+           var tbody="";
+           $.each(data,function(index,el){
+               var tr ="<tr>";
+               tr+="<td>"+el.username+"</td>";
+               tr+="<td>"+el.status+"</td>";
+               tr+="<td>"+el.msgCount+"</td>";
+               tr+="<td>"+"<button class='edit' class='btn btn-primary btn-sm' type='button'><i class='fa fa-edit'></i></button>"+"</td>";
+               tr+="<td>"+"<button class='del' class='btn btn-danger btn-sm' type='button'><i class='fa fa-trash-o'></i></button>"+"</td>";
+               tr+="</tr>";
+               tbody+=tr;
+           });
+           $("#editable-sample").children('tbody').append(tbody);
+           BindDataTableEvent();
        },
        error:function(){
            alert("服务器无响应，请重试！");
@@ -96,10 +103,14 @@ function search(){
 $(function(){
     showTableData();
     BindDataTableEvent();
+    var tr;
     $('#editable-sample tbody').on('click','button#edit',function () {
         $('.edit-modal').modal();
+        tr = $(this).parents('tr');
+    });
         $('.edit-modal').on('click','button#save-confirm',function(){
-            var data=dt.row($(this).parents('tr')).data();
+            //var data=$('#editable-sample').row($(this).parents('tr')).data();
+            var data = tr.children('td')[0].innerHTML;
             $('.edit-modal').modal('hide');
             var fields = $('#editForm').serializeArray();
             var name = fields[0].value;
@@ -127,23 +138,23 @@ $(function(){
             });
             $('input.form-control').val("");
         });
-    });
-    $('#editable-sample tbody').on('click','button#del',function(){
+    $('#editable-sample tbody').on('click','button#del',function() {
         $('.del-modal').modal();
-        var tr = $(this).parents('tr');
-        $('.del-modal').on('click','button#del-confirm',function()
+        tr = $(this).parents('tr');
+    });
+    $('.del-modal').on('click','button#del-confirm',function()
         {
             $(".del-modal").modal('hide');
-            var data = dt.row(tr).data();
+            var data = tr.children('td')[0].innerHTML;
             $.ajax({
-                url:'',
+                //url:'http://10.104.9.42:8080/AndroidTv/tv/deleteUser.do',
+                url:'http://localhost/newServer/newfile1.php',
                 type:'POST',
-                dataType:'json',
                 data:{
-                    username:data[0]
+                    username:data
                 },
                 success:function(data){
-                    if(data=="success"){
+                    if(data==="success"){
                         alert('删除成功！');
                         showTableData();
                     }else{
@@ -153,10 +164,8 @@ $(function(){
                 error:function(){
                     alert("服务器无响应，请重试");
                 }
-            })
-
+            });
         });
-    });
 });
 
 
