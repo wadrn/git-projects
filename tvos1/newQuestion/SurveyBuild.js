@@ -44,6 +44,7 @@ function saveCorrectAnswer(){
 }
 $(function(){
     var questionnaire;
+    var http="http://192.168.1.103:8080";   //网址改变直接改这个http
     $('#preview').on('click',function(){
         var $question1 = $("#Q1 .question-question").html();
         var $question2 = $("#Q2 .question-question").html();
@@ -163,64 +164,64 @@ $(function(){
             answer8 = [],
             answer9 = [],
             answer10 = [];
-        var A =$("#Q1 .question-answer tr:first td:eq(1)").text();
-        var B =$("#Q1 .question-answer tr:first td:eq(2)").text();
-        var C =$("#Q1 .question-answer tr:first td:eq(3)").text();
-        var D =$("#Q1 .question-answer tr:first td:eq(4)").text();
+        var A ='<strong>'+'A.'+'</strong>'+$("#Q1 .question-answer tr:first td:eq(1)").text();
+        var B ='<strong>'+'B.'+'</strong>'+$("#Q1 .question-answer tr:first td:eq(2)").text();
+        var C ='<strong>'+'C.'+'</strong>'+$("#Q1 .question-answer tr:first td:eq(3)").text();
+        var D ='<strong>'+'D.'+'</strong>'+$("#Q1 .question-answer tr:first td:eq(4)").text();
         var CrAns =$("#Q1 .correctAnswer").text();
         answer1.push(A,B,C,D,CrAns);
-        A = $("#Q2 .question-answer tr:first td:eq(1)").text();
-        B = $("#Q2 .question-answer tr:first td:eq(2)").text();
-        C = $("#Q2 .question-answer tr:first td:eq(3)").text();
-        D = $("#Q2 .question-answer tr:first td:eq(4)").text();
+        A = '<strong>'+'A.'+'</strong>'+$("#Q2 .question-answer tr:first td:eq(1)").text();
+        B = '<strong>'+'B.'+'</strong>'+$("#Q2 .question-answer tr:first td:eq(2)").text();
+        C = '<strong>'+'C.'+'</strong>'+$("#Q2 .question-answer tr:first td:eq(3)").text();
+        D = '<strong>'+'D.'+'</strong>'+$("#Q2 .question-answer tr:first td:eq(4)").text();
         CrAns = $("#Q2 .correctAnswer").text();
         answer2.push(A,B,C,D,CrAns);
-        A = $("#Q3 .question-answer tr:first td:eq(1)").text();
-        B = $("#Q3 .question-answer tr:first td:eq(2)").text();
-        C = $("#Q3 .question-answer tr:first td:eq(3)").text();
-        D = $("#Q3 .question-answer tr:first td:eq(4)").text();
+        A = '<strong>'+'A.'+'</strong>'+$("#Q3 .question-answer tr:first td:eq(1)").text();
+        B = '<strong>'+'B.'+'</strong>'+$("#Q3 .question-answer tr:first td:eq(2)").text();
+        C = '<strong>'+'C.'+'</strong>'+$("#Q3 .question-answer tr:first td:eq(3)").text();
+        D = '<strong>'+'D.'+'</strong>'+$("#Q3 .question-answer tr:first td:eq(4)").text();
         CrAns = $("#Q3 .correctAnswer").text();
         answer3.push(A,B,C,D,CrAns);
-        A = $("#Q4 .question-answer tr:first td:eq(1)").text();
-        B = $("#Q4 .question-answer tr:first td:eq(2)").text();
-        C = $("#Q4 .question-answer tr:first td:eq(3)").text();
-        D = $("#Q4 .question-answer tr:first td:eq(4)").text();
+        A = '<strong>'+'A.'+'</strong>'+$("#Q4 .question-answer tr:first td:eq(1)").text();
+        B = '<strong>'+'B.'+'</strong>'+$("#Q4 .question-answer tr:first td:eq(2)").text();
+        C = '<strong>'+'C.'+'</strong>'+$("#Q4 .question-answer tr:first td:eq(3)").text();
+        D = '<strong>'+'D.'+'</strong>'+$("#Q4 .question-answer tr:first td:eq(4)").text();
         CrAns = $("#Q4 .correctAnswer").text();
         answer4.push(A,B,C,D,CrAns);
-        A = $("#Q5 .question-answer tr:first td:eq(1)").text();
-        B = $("#Q5 .question-answer tr:first td:eq(2)").text();
-        C = $("#Q5 .question-answer tr:first td:eq(3)").text();
-        D = $("#Q5 .question-answer tr:first td:eq(4)").text();
+        A = '<strong>'+'A.'+'</strong>'+$("#Q5 .question-answer tr:first td:eq(1)").text();
+        B = '<strong>'+'B.'+'</strong>'+$("#Q5 .question-answer tr:first td:eq(2)").text();
+        C = '<strong>'+'C.'+'</strong>'+$("#Q5 .question-answer tr:first td:eq(3)").text();
+        D = '<strong>'+'D.'+'</strong>'+$("#Q5 .question-answer tr:first td:eq(4)").text();
         CrAns = $("#Q5 .correctAnswer").text();
         answer5.push(A,B,C,D,CrAns);
-        A = $("#Q6 .question-answer tr:first td:eq(1)").text();
-        B = $("#Q6 .question-answer tr:first td:eq(2)").text();
-        C = $("#Q6 .question-answer tr:first td:eq(3)").text();
-        D = $("#Q6 .question-answer tr:first td:eq(4)").text();
+        A = '<strong>'+'A.'+'</strong>'+$("#Q6 .question-answer tr:first td:eq(1)").text();
+        B = '<strong>'+'B.'+'</strong>'+$("#Q6 .question-answer tr:first td:eq(2)").text();
+        C = '<strong>'+'C.'+'</strong>'+$("#Q6 .question-answer tr:first td:eq(3)").text();
+        D = '<strong>'+'D.'+'</strong>'+$("#Q6 .question-answer tr:first td:eq(4)").text();
         CrAns = $("#Q6 .correctAnswer").text();
         answer6.push(A,B,C,D,CrAns);
-        A = $("#Q7 .question-answer tr:first td:eq(1)").text();
-        B = $("#Q7 .question-answer tr:first td:eq(2)").text();
-        C = $("#Q7 .question-answer tr:first td:eq(3)").text();
-        D = $("#Q7 .question-answer tr:first td:eq(4)").text();
+        A = '<strong>'+'A.'+'</strong>'+$("#Q7 .question-answer tr:first td:eq(1)").text();
+        B = '<strong>'+'B.'+'</strong>'+$("#Q7 .question-answer tr:first td:eq(2)").text();
+        C = '<strong>'+'C.'+'</strong>'+$("#Q7 .question-answer tr:first td:eq(3)").text();
+        D = '<strong>'+'D.'+'</strong>'+$("#Q7 .question-answer tr:first td:eq(4)").text();
         CrAns = $("#Q7 .correctAnswer").text();
         answer7.push(A,B,C,D,CrAns);
-        A = $("#Q8 .question-answer tr:first td:eq(1)").text();
-        B = $("#Q8 .question-answer tr:first td:eq(2)").text();
-        C = $("#Q8 .question-answer tr:first td:eq(3)").text();
-        D = $("#Q8 .question-answer tr:first td:eq(4)").text();
+        A = '<strong>'+'A.'+'</strong>'+$("#Q8 .question-answer tr:first td:eq(1)").text();
+        B = '<strong>'+'B.'+'</strong>'+$("#Q8 .question-answer tr:first td:eq(2)").text();
+        C = '<strong>'+'C.'+'</strong>'+$("#Q8 .question-answer tr:first td:eq(3)").text();
+        D = '<strong>'+'D.'+'</strong>'+$("#Q8 .question-answer tr:first td:eq(4)").text();
         CrAns = $("#Q8 .correctAnswer").text();
         answer8.push(A,B,C,D,CrAns);
-        A = $("#Q9 .question-answer tr:first td:eq(1)").text();
-        B = $("#Q9 .question-answer tr:first td:eq(2)").text();
-        C = $("#Q9 .question-answer tr:first td:eq(3)").text();
-        D = $("#Q9 .question-answer tr:first td:eq(4)").text();
+        A = '<strong>'+'A.'+'</strong>'+$("#Q9 .question-answer tr:first td:eq(1)").text();
+        B = '<strong>'+'B.'+'</strong>'+$("#Q9 .question-answer tr:first td:eq(2)").text();
+        C = '<strong>'+'C.'+'</strong>'+$("#Q9 .question-answer tr:first td:eq(3)").text();
+        D = '<strong>'+'D.'+'</strong>'+$("#Q9 .question-answer tr:first td:eq(4)").text();
         CrAns = $("#Q9 .correctAnswer").text();
         answer9.push(A,B,C,D,CrAns);
-        A = $("#Q10 .question-answer tr:first td:eq(1)").text();
-        B = $("#Q10 .question-answer tr:first td:eq(2)").text();
-        C = $("#Q10 .question-answer tr:first td:eq(3)").text();
-        D = $("#Q10 .question-answer tr:first td:eq(4)").text();
+        A = '<strong>'+'A.'+'</strong>'+$("#Q10 .question-answer tr:first td:eq(1)").text();
+        B = '<strong>'+'B.'+'</strong>'+$("#Q10 .question-answer tr:first td:eq(2)").text();
+        C = '<strong>'+'C.'+'</strong>'+$("#Q10 .question-answer tr:first td:eq(3)").text();
+        D = '<strong>'+'D.'+'</strong>'+$("#Q10 .question-answer tr:first td:eq(4)").text();
         CrAns = $("#Q10 .correctAnswer").text();
         answer10.push(A,B,C,D,CrAns);
 
@@ -246,7 +247,7 @@ $(function(){
         $("#saveQuestionnaire").modal('hide');
         $.ajax({
             type: "POST",
-            url: "",
+            url: http+"/AndroidTv/tv/questionnaireSave.do",
             data: {
                 questionnaire:questionnaire
             },
@@ -255,7 +256,7 @@ $(function(){
                    alert("保存成功");
                    window.location.href = "../home/home.html";
                }else{
-        
+                    //问卷保存失败？
                }
             },
             error:function(){

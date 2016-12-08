@@ -47,17 +47,21 @@
                                 <tr><th style="width:50px;">编码</th><th style="width:240px;">答案</th></tr></thead>
                                 <tbody class="ui-sortable">
                                     <tr>
-                                        <td><input class="ocode" onpaste="return false" ondragenter="return false" oncontextmenu="return false;" maxlength="5" value="A" type="text"></td><td><input class="option-txt"  onkeyup="saveAnswer(this)" type="text"></td>
+                                        <td><input class="ocode" oncontextmenu="return false;" maxlength="5" value="A" type="text" readonly="true"></td>
+                                        <td><input class="option-txt"  onkeyup="saveAnswer(this)" type="text"></td>
                                     </tr>
                                     <tr>
-                                    <td><input class="ocode" onpaste="return false" ondragenter="return false" oncontextmenu="return false;" maxlength="5" value="B"  type="text"></td>
+                                    <td><input class="ocode" oncontextmenu="return false;" maxlength="5" value="B"  type="text" readonly="true"></td>
                                     <td><input class="option-txt"  onkeyup="saveAnswer(this)" type="text"></td></tr>
                                     <tr>
-                                        <td><input class="ocode" onpaste="return false" ondragenter="return false" oncontextmenu="return false;" maxlength="5" value="C" type="text"></td><td><input class="option-txt" onkeyup="saveAnswer(this)" type="text"></td></tr>
+                                        <td><input class="ocode" oncontextmenu="return false;" maxlength="5" value="C" type="text" readonly="true"></td>
+                                        <td><input class="option-txt" onkeyup="saveAnswer(this)" type="text"></td></tr>
                                 <tr>
-                                    <td><input class="ocode" onpaste="return false" ondragenter="return false" oncontextmenu="return false;" maxlength="5" value="D" type="text"></td>
+                                    <td><input class="ocode" oncontextmenu="return false;" maxlength="5" value="D" type="text" readonly="true"></td>
                                     <td><input class="option-txt" onkeyup="saveAnswer(this)" type="text"></td></tr>
-                                    </tbody></table></legend>
+                                    </tbody>
+                                </table>
+                                </legend>
                                 </fieldset>
                             <fieldset style="text-align:center;margin-top:9px;">
                                 <input id="correct" type="text" placeholder="请输入正确答案选项" style="height:33px;margin:2px;border-radius:3px">
